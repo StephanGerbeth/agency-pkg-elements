@@ -34,7 +34,7 @@
 		"prod": "node node_modules/gulp/bin/gulp run --serverConfig=node_modules/agency-boilerplate/env/config/local.json --configTasks=node_modules/agency-boilerplate/env/config/tasks.json --env=production --server=agency-server --packageDev=true"
 	},
 	"dependencies": {
-		"agency-pkg-base": "git+https://git@github.com/StephanGerbeth/agency/agency-pkg-base.git"
+		"agency-pkg-base": "git+https://git@github.com/StephanGerbeth/agency-pkg-base.git"
 	},
 	"devDependencies": {
 		"agency-boilerplate": "git+https://git@github.com/StephanGerbeth/agency-boilerplate.git#feature/packages"
