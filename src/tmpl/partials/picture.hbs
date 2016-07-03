@@ -1,0 +1,36 @@
+---
+title: "sample image"
+class: #css-class
+sources:
+    - {type: 'lg', srcset: '//dummyimage.com/1920x1080/ff0000/fff'}
+    - {type: 'md', srcset: '//dummyimage.com/1199x674/00ff00/fff'}
+    - {type: 'sm', srcset: '//dummyimage.com/991x557/0000ff/fff'}
+    - {type: 'xs', srcset: '//dummyimage.com/767x431/ffff00/fff'}
+    - {type: 'default', srcset: '//dummyimage.com/479x269/00ffff/fff'}
+sizes:
+    lg: '(min-width: 1200px)'
+    md: '(min-width: 992px)'
+    sm: '(min-width: 768px)'
+    xs: '(min-width: 480px)'
+fallback:
+    img: 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
+---
+<picture class="partial{{#if class}} {{class}}{{/if}}{{#if svg}} svg{{/if}}" data-partial="elements/picture">
+    <!--[if IE 9]><video><![endif]-->
+    {{#each sources}}
+        <source class="{{type}}"{{#if (lookup ../sizes type)}} media="{{lookup ../sizes type}}"{{/if}}{{#if src}} src="{{src}}"{{/if}}{{#if srcset}} srcset="{{srcset}}"{{/if}}/>
+    {{/each}}
+    <!--[if IE 9]></video><![endif]-->
+
+    {{#if svg}}
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewbox="0 0 752 470" preserveAspectRatio="xMinYMin" width="752" height="470">
+            <image xlink:href="{{fallback.img}}" x="0" y="0" width="752" height="470"{{#if svg.clipPath}} clip-path="url({{svg.clipPath}})"{{/if}}{{#if svg.mask}} mask="url({{svg.mask}})"{{/if}}/>
+        </svg>
+    {{else}}
+        <img src="{{fallback.img}}" alt="{{title}}">
+    {{/if}}
+</picture>
+<script type="text/javascript">
+    var pictures = document.getElementsByTagName('picture');
+    window.picture.parse(pictures[pictures.length - 1]);
+</script>

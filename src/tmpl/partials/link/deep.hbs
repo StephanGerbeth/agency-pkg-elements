@@ -1,0 +1,15 @@
+---
+id: #string
+class: #string
+url: "#deep-link"
+title: "Deep Link"
+target: "_self"
+rel: "next"
+deepName: "modal"
+---
+{{#mixin "agency-pkg-elements/link" this}}
+  {{#content "attributes"}}
+    data-deep-name="{{{deepName}}}"
+    data-partial="elements/link/deep"
+  {{/content}}
+{{/mixin}}
