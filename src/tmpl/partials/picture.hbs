@@ -15,7 +15,7 @@ sizes:
 fallback:
     img: 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
 ---
-<picture class="partial{{#if class}} {{class}}{{/if}}{{#if svg}} svg{{/if}}" data-partial="elements/picture">
+<picture class="partial{{#if class}} {{class}}{{/if}}{{#if svg}} svg{{/if}}" data-package="agency-pkg-elements" data-partial="elements/picture">
     <!--[if IE 9]><video><![endif]-->
     {{#each sources}}
         <source class="{{type}}"{{#if (lookup ../sizes type)}} media="{{lookup ../sizes type}}"{{/if}}{{#if src}} src="{{src}}"{{/if}}{{#if srcset}} srcset="{{srcset}}"{{/if}}/>
