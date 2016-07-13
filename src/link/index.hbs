@@ -1,0 +1,20 @@
+---
+id: #string
+class: #string
+url: "http://www."
+title: "Link"
+target: "_self"
+rel: "next"
+---
+<a href="{{{url}}}"
+    {{#if id}}
+        id="{{{id}}}"
+    {{/if}}
+    class="partial{{#if class}} {{class}}{{/if}}"
+    title="{{{title}}}"
+    rel="{{{rel}}}"
+    {{#block "attributes"}}
+        target="{{{target}}}"
+        data-pkg="agency-pkg-elements/link"
+    {{/block}}
+><span class="pressure-waves"></span>{{#block "status"}}{{{status}}}{{/block}}{{#block "title"}}{{{title}}}{{/block}}</a>
